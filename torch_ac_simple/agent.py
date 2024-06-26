@@ -10,7 +10,8 @@ import torch_ac_simple.utils as utils
 from .config import Config
 import tensorboardX
 
-
+# git config --global user.name "FIRST_NAME LAST_NAME"
+# Set your email address: git config --global user.email "MY_NAME@example.com"
 
 class Agent:
     """An self.
@@ -87,6 +88,8 @@ class Agent:
         log_episode_return = torch.zeros(self.num_envs, device=device)
         log_episode_num_frames = torch.zeros(self.num_envs, device=device)
 
+        self.acmodel.to(device)
+
         while log_done_counter < eps:
             actions = self.get_actions(obss)
             obss, rewards, terminateds, truncateds, _ = self.env.step(actions)
@@ -154,6 +157,7 @@ class Agent:
         if "model_state" in status:
             self.acmodel.load_state_dict(status["model_state"])
         self.acmodel.to(device)
+        print("sent to", device)
         txt_logger.info("Model loaded\n")
         txt_logger.info("{}\n".format(self.acmodel))
 
