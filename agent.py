@@ -3,15 +3,12 @@ import torch_ac
 import time
 import os
 from typing import Literal
-from .model import ACModel
-from torch_ac.utils.penv import ParallelEnv
-from torch_ac_simple.utils import device
-import torch_ac_simple.utils as utils
-from .config import Config
+from model import ACModel
+from torch_ac.utils import ParallelEnv
+from utils import device
+import utils
+from config import Config
 import tensorboardX
-
-# git config --global user.name "FIRST_NAME LAST_NAME"
-# Set your email address: git config --global user.email "MY_NAME@example.com"
 
 class Agent:
     """An self.

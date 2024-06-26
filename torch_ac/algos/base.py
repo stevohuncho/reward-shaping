@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 import torch
 
-from custom_torch_ac.format import default_preprocess_obss
-from custom_torch_ac.utils import DictList, ParallelEnv
+from torch_ac.format import default_preprocess_obss
+from torch_ac.utils import DictList, ParallelEnv
 
 
 class BaseAlgo(ABC):

@@ -2,7 +2,7 @@ import numpy
 import torch
 import torch.nn.functional as F
 
-from custom_torch_ac.algos.base import BaseAlgo
+from torch_ac.algos.base import BaseAlgo
 
 class PPOAlgo(BaseAlgo):
     """The Proximal Policy Optimization algorithm
